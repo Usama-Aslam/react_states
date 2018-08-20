@@ -23,7 +23,11 @@ class App extends Component {
                "this.state= &#123; &#125;"  <br></br>
                "this.setState(&#123;&#125;)"<br></br>
                and the use of bind in the for functions so that they can refer "this". <br></br><br></br>
+                
                 <button onClick={this.setSomeValue.bind(this)}>Click me</button><span>  onclick function "this.setSomeValue.bind(this)"</span> {/* using bind in direct function calling onClick*/}
+                <p>{this.state.count}</p>
+
+                <button onClick={()=>this.setSomeValue()}>Click me</button><span> binding by using arrow function </span>
              </p>
   }
   setSomeValue(){
