@@ -8,9 +8,12 @@ class App extends Component {
     super();
     this.state={
       count:0,
-      count2:0
+      count2:0,
+      text:"hello",
+      condition:true
+
     }
-      // this.setSomething = this.setSomething.bind(this)
+      this.toggle = this.toggle.bind(this)
   }
 
   renderHeader(){
@@ -33,6 +36,10 @@ class App extends Component {
                {/* using bind by using arrow function calling. */}
                 <button onClick={()=>this.setAnotherSomeValue()}>Click me</button><span> binding by using arrow function "()=>&#123;this.setAnotherValue() &#125;" </span>
                 <p>{this.state.count2}</p>
+
+                 {/*toggle the setstate value*/}
+                 <button onClick={this.toggle}>Toggle me</button>
+                <p>{this.state.text}</p>
              </p>
   }
   setSomeValue(){
@@ -49,6 +56,12 @@ class App extends Component {
     console.log(this.state.count2)
   }
 
+  toggle(){
+    this.setState({
+      text: this.state.condition? "love Pakistan" : "hello",
+      condition:!this.state.condition
+    })
+  }
   render() {
     return (
       <div className="App">
